@@ -9,9 +9,12 @@ const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 
+const PORT = process.env.PORT || 5000;
+
 app.use(cors({
     origin: "https://mobile-store-app-5955b.web.app"
 }));
+
 app.use(express.json());
 
 app.use("/", userRoutes);
@@ -21,8 +24,6 @@ app.use("/", orderRoutes);
 app.get("/", (req, res) => {
     res.send("Backend Running Successfully");
 });
-
-const PORT = 5000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
