@@ -9,7 +9,9 @@ const orderRoutes = require("./routes/orderRoutes");
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+    origin: "https://mobile-store-app-5955b.web.app"
+}));
 app.use(express.json());
 
 app.use("/", userRoutes);
